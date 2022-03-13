@@ -1,5 +1,10 @@
 # Profound Sentence Classifier
 
+![App](./assets/app.png)
+<div align="center">
+    <a href="https://profoundornot.herokuapp.com/">Try the APP</a>
+ </div>
+
 ## Problem Statement
 
 It may seem easy for a human to tell a profound statement from a mundane/shallow one, but what really makes a statement profound? For this project, I seek to answer 3 questions:
