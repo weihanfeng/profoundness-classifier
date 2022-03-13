@@ -1,6 +1,6 @@
 # Profound Sentence Classifier
 
-![App](./assets/app.png)
+![App](./assets/app.PNG)
 <div align="center">
     <a href="https://profoundornot.herokuapp.com/">Try the APP</a>
  </div>
