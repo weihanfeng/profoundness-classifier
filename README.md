@@ -1,9 +1,27 @@
 # Profound Sentence Classifier
 
-![App](./assets/app.png)
-<div align="center">
-    <a href="https://profoundornot.herokuapp.com/">Try the APP</a>
- </div>
+## Try the Web App
+
+
+```python
+from IPython.display import IFrame
+IFrame('https://profoundornot.herokuapp.com/', width=900, height=500)
+```
+
+
+
+
+
+<iframe
+    width="900"
+    height="500"
+    src="https://profoundornot.herokuapp.com/"
+    frameborder="0"
+    allowfullscreen
+></iframe>
+
+
+
 
 ## Problem Statement
 
