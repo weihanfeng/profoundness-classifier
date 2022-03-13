@@ -1,35 +1,17 @@
 from flask import Flask, jsonify, request, render_template
 # import necessary libraries
 import pandas as pd
-import numpy as np
 import re
-
-from sklearn.model_selection import train_test_split, GridSearchCV, ShuffleSplit
-from sklearn.pipeline import Pipeline
-from sklearn.naive_bayes import MultinomialNB, GaussianNB
-from sklearn.linear_model import LogisticRegression
-from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
-from sklearn.svm import SVC
-from sklearn.metrics import confusion_matrix, plot_confusion_matrix
-from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
-from sklearn.compose import ColumnTransformer
-from sklearn.preprocessing import MaxAbsScaler, StandardScaler, FunctionTransformer
-from sklearn.decomposition import TruncatedSVD
-
+import numpy as np
 from nltk import pos_tag
-from nltk.tokenize import sent_tokenize, word_tokenize, RegexpTokenizer
-from nltk.stem import WordNetLemmatizer
-from nltk.stem.porter import PorterStemmer
-from nltk.corpus import stopwords
-import nltk
-
+from nltk.tokenize import word_tokenize
 import os
-
 import cloudpickle
+import nltk
 
 app = Flask(__name__)
 
-@app.route('/predict-quote', methods = ["GET", "POST"])
+@app.route('/', methods = ["GET", "POST"])
 
 def predict_student_interface():
     
@@ -76,7 +58,10 @@ def predict_student_interface():
         sentence = [sentence]
 
 
-        model = cloudpickle.load(open('../finalized_model.pkl', 'rb'))
+        THIS_FOLDER = os.path.abspath(os.path.dirname(__file__))
+        my_file = THIS_FOLDER + '/finalized_model.pkl'
+
+        model = cloudpickle.load(open(my_file, 'rb'))
 
         sentence_df = pd.DataFrame(sentence, columns = ["title"])
         sentence_df = sentence_df.apply(sentence_length, axis = 1)
